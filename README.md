@@ -25,7 +25,7 @@ Este repositorio es mi espacio de estudio personal para aprender y practicar **F
 - Carpeta: [`playground/`](./playground/)  
 
 ### 🌐 Documentación oficial  
-- Ejercicios y ejemplos basados directamente en la documentación de **Flutter**.  
+- Ejemplos y Codelabs basados en la documentación de **Flutter**.  
 
 - Guías adaptadas y comentadas.  
 - Carpeta: [`docs/`](./docs/)  
