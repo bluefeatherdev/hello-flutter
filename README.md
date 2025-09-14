@@ -43,4 +43,4 @@ Este repositorio es mi espacio de estudio personal para aprender y practicar **F
 - Crear una base sólida para futuros proyectos de desarrollo móvil.  
 - Documentar mi progreso en el aprendizaje paso a paso.  
 
-> Made with '\u{2665}' (♥)
+> Made with '\u{2665}' (♥) by Jesús Domínguez [@bluefeatherdev](https://github.com/bluefeatherdev/)
