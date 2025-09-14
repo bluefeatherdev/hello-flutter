@@ -6,7 +6,7 @@
 
 Este repositorio es mi espacio de estudio personal para aprender y practicar **Flutter**, paso a paso, con ejercicios académicos, documentación oficial, ejemplos y pruebas personales.
 
-![](./images/header_hello_flutter.png)
+![](./images/header_hello_flutter.jpg)
 
 > Este repositorio está en constante crecimiento. Las carpetas se irán completando con ejemplos, notas y mejoras progresivamente.
 
