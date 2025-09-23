@@ -1,0 +1,10 @@
+name: dart_example
+
+description: >-
+  The following example is a small program that fetches data from dart.dev, decodes the returned json, and prints it to the console.
+
+environment:
+  sdk: '^3.9.0'
+dependencies:
+  http: ^1.5.0
+
