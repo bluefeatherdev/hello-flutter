@@ -1,0 +1,19 @@
+name: container_example_02
+description: "This example shows how to use many of the features of Container at once. The constraints are set to fit the font size plus ample headroom vertically, while expanding horizontally to fit the parent. The padding is used to make sure there is space between the contents and the text. The color makes the box blue. The alignment causes the child to be centered in the box. Finally, the transform applies a slight rotation to the entire contraption to complete the effect."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.9.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true

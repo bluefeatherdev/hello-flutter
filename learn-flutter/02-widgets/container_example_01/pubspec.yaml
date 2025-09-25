@@ -1,0 +1,19 @@
+name: container_example_01
+description: "This example shows a 48x48 amber square (placed inside a Center widget in case the parent widget has its own opinions regarding the size that the Container should take), with a margin so that it stays away from neighboring widgets:"
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.9.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true

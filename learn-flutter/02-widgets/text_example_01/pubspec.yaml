@@ -1,0 +1,19 @@
+name: text_example_01
+description: "This example shows how to display text using the Text widget with the overflow set to TextOverflow.ellipsis and TextOverflow.fade, as well as setting maxLines to 1, or disabling soft wrapping with softWrap."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.9.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
