@@ -10,31 +10,38 @@ Este repositorio es mi espacio de estudio personal para aprender y practicar **F
 
 > Este repositorio está en constante crecimiento. Las carpetas se irán completando con ejemplos, notas y mejoras progresivamente.
 
-## 🔎 ¿Qué encontrarás?
+## 🔎 ¿Qué encontrarás?  
 
-### 🎓 Aprendizaje en la universidad  
-- Ejercicios académicos y prácticas relacionadas con las clases.  
+### 👨‍💻 Aprendizaje estructurado 
+- Widgets y layouts básicos (`Text`, `Image`, `Row`, `Column`, `Container`)  
 
-- Proyectos guiados y notas adicionales.  
-- Carpeta: [`cuc/`](./cuc/)    
-
-### 🧪 Playground personal  
+- Manejo de estado y navegación (`Stateless`, `Stateful`, `route`)  
+- Estilos, temas y recursos (`Material Design`, `theme`, `assets`) 
+- Carpeta: [`learn-flutter/`](./learn-flutter/) 
+  
+### 🧪 Pruebas personales  
 - Mis pruebas libres con Flutter. 
  
 - Experimentos, prototipos y mini proyectos propios.  
 - Carpeta: [`playground/`](./playground/)  
 
-### 🌐 Documentación oficial  
-- Ejemplos y Codelabs basados en la documentación de **Flutter**.  
+### 🥇 Codelabs oficiales  
+- Ejemplos prácticos de Google sobre **Flutter**.  
 
 - Guías adaptadas y comentadas.  
-- Carpeta: [`docs/`](./docs/)  
+- Carpeta: [`codelabs/`](./codelabs/)  
 
-### 🥇 Ejemplos destacados  
+### 🌐 Ejemplos destacados  
 - Ejemplos de la comunidad que me han parecido útiles o inspiradores. 
  
 - Código adaptado para mi aprendizaje personal.  
 - Carpeta: [`examples/`](./examples/)
+
+### 🎓 Aprendizaje en la universidad  
+- Ejercicios académicos y prácticas relacionadas con las clases.  
+
+- Proyectos guiados y notas adicionales.  
+- Carpeta: [`cuc/`](./cuc/)  
 
 ## 🎯 Objetivos del repositorio  
 
