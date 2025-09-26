@@ -1,0 +1,19 @@
+name: scaffold_example_01
+description: "This example shows a Scaffold with a body and FloatingActionButton. The body is a Text placed in a Center in order to center the text within the Scaffold. The FloatingActionButton is connected to a callback that increments a counter."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.9.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
