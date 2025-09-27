@@ -1,0 +1,19 @@
+name: appbar_example_02
+description: "This sample shows the creation of an AppBar widget with the shadowColor and scrolledUnderElevation properties set, as described in: https://m3.material.io/components/top-app-bar/overview"
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.9.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true

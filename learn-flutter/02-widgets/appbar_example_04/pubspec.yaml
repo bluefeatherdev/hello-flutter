@@ -1,0 +1,19 @@
+name: appbar_example_04
+description: "This example shows how to listen to a nested Scrollable's scroll notification in a nested scroll view using the notificationPredicate property and use it to make scrolledUnderElevation take effect."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.9.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
