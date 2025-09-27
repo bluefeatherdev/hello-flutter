@@ -1,0 +1,19 @@
+name: flutter_application_03
+description: "This Flutter app demonstrates the use of a StatefulWidget to manage dynamic data. The application displays a counter on the home screen, which updates each time the user presses the 'Increment counter' button. It highlights the use of setState() for state management, along with core widgets such as MaterialApp, Scaffold, AppBar, Text, and ElevatedButton. This example introduces the fundamentals of interactivity and reactive UI updates in Flutter."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.9.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
