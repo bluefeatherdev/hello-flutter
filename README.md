@@ -41,7 +41,7 @@ Este repositorio es mi espacio de estudio personal para aprender y practicar **F
 - Ejercicios académicos y prácticas relacionadas con las clases.  
 
 - Proyectos guiados y notas adicionales.  
-- Carpeta: [`cuc/`](./cuc/)  
+- Carpeta: [`universidad-de-la-costa/`](./universidad-de-la-costa/)  
 
 ## 🎯 Objetivos del repositorio  
 
