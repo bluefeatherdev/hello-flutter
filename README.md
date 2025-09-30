@@ -50,8 +50,8 @@ Este repositorio es mi espacio de estudio personal para aprender y practicar **F
 - Crear una base sólida para futuros proyectos de desarrollo móvil.  
 - Documentar mi progreso en el aprendizaje paso a paso.  
 
-## ⚖️ Licencia del repositorio
+<!-- ## ⚖️ Licencia del repositorio -->
 
-Este proyecto está licenciado bajo los términos de la [Licencia Apache 2.0](LICENSE).
+> Este proyecto está licenciado bajo los términos de la [Licencia Apache 2.0](LICENSE).
 
 > Made with '\u{2665}' (♥) by Jesús Domínguez [@bluefeatherdev](https://github.com/bluefeatherdev/)
