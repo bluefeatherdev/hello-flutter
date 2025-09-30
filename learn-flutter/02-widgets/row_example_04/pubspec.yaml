@@ -1,0 +1,19 @@
+name: row_example_04
+description: "A Flutter demo app showcasing the Row widget with textDirection set to TextDirection.rtl, reversing the order of its children while using Expanded to prevent overflow and allow proper text wrapping."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.9.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true

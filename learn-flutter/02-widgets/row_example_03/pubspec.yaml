@@ -1,0 +1,19 @@
+name: row_example_03
+description: "A Flutter demo app showcasing how to fix Row overflow by wrapping a Text widget with Expanded for proper space distribution and wrapping."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.9.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
