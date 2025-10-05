@@ -1,2 +1,5 @@
 # From Visual Studio Code
 .vscode
+
+# Networking
+*.pdf
