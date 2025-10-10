@@ -1,0 +1,19 @@
+name: sizing_widgets_within_rows_example
+description: "A Flutter demo app showcasing how to size widgets within a Row using the Expanded widget to distribute space equally among children."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true

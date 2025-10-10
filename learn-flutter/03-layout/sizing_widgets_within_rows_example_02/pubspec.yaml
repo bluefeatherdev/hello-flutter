@@ -1,0 +1,19 @@
+name: sizing_widgets_within_rows_example_02
+description: "A Flutter demo app showcasing how to size widgets within a Row using Expanded with different flex values to control proportional space distribution."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true

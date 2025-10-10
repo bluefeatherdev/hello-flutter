@@ -1,0 +1,19 @@
+name: align_widgets_within_column_example
+description: "A Flutter demo app showcasing how to align multiple widgets within a Column using mainAxisAlignment.spaceEvenly for equal vertical spacing."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
