@@ -1,5 +1,5 @@
 name: flutter_application_13
-description: "A new Flutter project."
+description: "A Flutter multi-page demo app (flutter_application_13) featuring a Fitness Tracker with workout stats and a Developer Portfolio with skills and experience, using custom widgets and dynamic lists."
 publish_to: 'none'
 version: 0.1.0
 

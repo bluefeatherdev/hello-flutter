@@ -11,12 +11,16 @@ class DeveloperPortfolioPage extends StatelessWidget {
     {'name': 'Figma', 'logo': 'figma.png'},
     {'name': 'PostgreSQL', 'logo': 'postgresql.png'},
     {'name': 'Docker', 'logo': 'docker.png'},
+    {'name': 'Kubernetes', 'logo': 'kubernetes.png'},
+    {'name': 'Git', 'logo': 'git.png'},
+    {'name': 'Github', 'logo': 'github.png'},
+    {'name': 'Github Copilot', 'logo': 'github-copilot.png'},
     {'name': 'VS Code', 'logo': 'vscode.png'},
   ];
 
   final List<Map<String, dynamic>> experience = const [
     {
-      'startYear': 2026,
+      'startYear': 2025,
       'role': 'Senior Flutter Developer',
       'organization': 'Google Developer Groups',
     },
@@ -63,50 +67,108 @@ class DeveloperPortfolioPage extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
-                    Image.asset('assets/images/avatar.png'),
+                    CircleAvatar(
+                      radius: 75,
+                      backgroundImage: AssetImage(
+                        'assets/images/bluefeatherdev.jpg',
+                      ),
+                    ),
                     Column(
                       children: <Text>[
-                        Text('Jesús Domínguez'),
+                        Text(
+                          'Jesús Domínguez',
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
                         Text('Mobile Developer'),
                       ],
                     ),
                   ],
                 ),
-                Text(
-                  'I\'m a Software Engineering student. I\'m dedicated to cross-platform mobile development, learning technologies such as Flutter, Dart, and Firebase. I create applications that connect people, simplify the way they share meaningful information, and help them organize their lives more effectively.',
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    'I\'m a Software Engineering student. I\'m dedicated to cross-platform mobile development. I create applications that connect people, simplify the way they share meaningful information, and help them organize their lives more effectively.',
+                    textAlign: TextAlign.justify,
+                  ),
                 ),
-                ElevatedButton(onPressed: () {}, child: Text('Contact me')),
+                SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blue.shade800,
+                    ),
+                    child: Text(
+                      'Contact me',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
-          Expanded(
-            child: Container(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                children: <Widget>[
-                  Text('Skills'),
-                  Expanded(
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: skills.length,
-                      itemBuilder: (context, index) {
-                        final item = skills[index];
-                        return CustomSkillCard(
-                          name: item['name']!,
-                          logo: item['logo']!,
-                        );
-                      },
+          Container(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: <Widget>[
+                SizedBox(
+                  width: double.infinity,
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      'Skills',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
                   ),
-                ],
-              ),
+                ),
+                SizedBox(
+                  height: 116,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: skills.length,
+                    itemBuilder: (context, index) {
+                      final item = skills[index];
+                      return CustomSkillCard(
+                        name: item['name']!,
+                        logo: item['logo']!,
+                      );
+                    },
+                  ),
+                ),
+              ],
             ),
           ),
           Expanded(
             child: Column(
               children: <Widget>[
-                Text('Experience'),
+                Padding(
+                  padding: const EdgeInsets.only(left: 8.0, bottom: 8.0),
+                  child: SizedBox(
+                    width: double.infinity,
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        'Experience',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
                 Expanded(
                   child: ListView.builder(
                     itemCount: experience.length,
@@ -138,11 +200,12 @@ class CustomSkillCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 100,
       padding: const EdgeInsets.all(8.0),
       child: Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          Expanded(child: Image.asset('assets/logos/$logo')),
+          Image.asset('assets/logos/$logo', width: 50),
           Text(name),
         ],
       ),
@@ -165,10 +228,24 @@ class CustomExperienceCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 100,
       padding: const EdgeInsets.all(8.0),
       child: Column(
-        children: <Widget>[Text('$startYear'), Text(role), Text(organization)],
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text(
+            '$startYear',
+            style: TextStyle(fontSize: 14, fontWeight: FontWeight.w200),
+          ),
+          Text(
+            role,
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+          ),
+          Text(
+            organization,
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.w300),
+          ),
+        ],
       ),
     );
   }
