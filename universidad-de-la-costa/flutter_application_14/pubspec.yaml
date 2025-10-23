@@ -1,5 +1,5 @@
 name: flutter_application_14
-description: "A new Flutter project."
+description: "A Flutter demo app showcasing a Wellness Tracker with profile card, activity stats, dynamic activity log, and a form inside a modal bottom sheet to add new activities."
 publish_to: 'none'
 version: 0.1.0
 
