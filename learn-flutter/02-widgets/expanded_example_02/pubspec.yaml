@@ -1,0 +1,19 @@
+name: expanded_example_02
+description: "A Flutter demo app showcasing the Expanded widget with flex factors inside a Row to distribute horizontal space proportionally."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
