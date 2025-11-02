@@ -1,0 +1,19 @@
+name: listtile_example_06
+description: "A Flutter demo app showcasing ListTile with dynamic titleAlignment, allowing runtime changes to vertical alignment of title and subtitle relative to leading and trailing widgets."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
