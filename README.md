@@ -1,55 +1,59 @@
-# Hello, Flutter! 
+# Hello, Flutter!  
 
 ![Static Badge](https://img.shields.io/badge/framework/sdk-flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white&labelColor=101010)
 ![Static Badge](https://img.shields.io/badge/language-dart-0175C2?style=for-the-badge&logo=dart&logoColor=white&labelColor=101010) 
 ![Static Badge](https://img.shields.io/badge/Scripting-bash-4EAA25?style=for-the-badge&logo=gnubash&logoColor=white&labelColor=101010)
 
-Este repositorio es mi espacio de estudio personal para aprender y practicar **Flutter**, paso a paso, con ejercicios académicos, documentación oficial, ejemplos y pruebas personales.
+This repository is my personal study space to learn and practice **Flutter** step by step, using academic exercises, official documentation, examples, and personal experiments.
 
 ![](./images/header_hello_flutter.jpg)
 
-> Este repositorio está en constante crecimiento. Las carpetas se irán completando con ejemplos, notas y mejoras progresivamente.
 
-## 🔎 ¿Qué encontrarás?  
+> This repository is licensed under the terms of the [Apache License 2.0](LICENSE). 
 
-### 👨‍💻 Aprendizaje estructurado 
-- Widgets y layouts básicos (`Text`, `Image`, `Row`, `Column`, `Container`)  
+## What will you find here?  
 
-- Manejo de estado y navegación (`Stateless`, `Stateful`, `route`)  
-- Estilos, temas y recursos (`Material Design`, `theme`, `assets`) 
-- Carpeta: [`learn-flutter/`](./learn-flutter/) 
-  
-### 🧪 Pruebas personales  
-- Mis pruebas libres con Flutter. 
+### Structured Learning  
+
+- Basic widgets and layouts (`Text`, `Image`, `Row`, `Column`, `Container`)  
+
+- State management and navigation (`Stateless`, `Stateful`, `route`)  
+- Styles, themes, and resources (`Material Design`, `theme`, `assets`)  
+- Folder: [`learn-flutter/`](./learn-flutter/)  
+
+### Personal Experiments  
+
+- My free explorations with Flutter  
+
+- Experiments, prototypes, and small personal projects  
+- Folder: [`playground/`](./playground/)  
+
+### Official Codelabs  
+
+- Practical examples from Google’s **Flutter** codelabs  
+
+- Adapted and annotated guides  
+- Folder: [`codelabs/`](./codelabs/)  
+
+### Featured Examples  
+
+- Community examples I found useful or inspiring 
  
-- Experimentos, prototipos y mini proyectos propios.  
-- Carpeta: [`playground/`](./playground/)  
+- Adapted code for my personal learning  
+- Folder: [`examples/`](./examples/)  
 
-### 🥇 Codelabs oficiales  
-- Ejemplos prácticos de Google sobre **Flutter**.  
+### University Learning  
 
-- Guías adaptadas y comentadas.  
-- Carpeta: [`codelabs/`](./codelabs/)  
+- Academic exercises and class-related practices  
 
-### 🌐 Ejemplos destacados  
-- Ejemplos de la comunidad que me han parecido útiles o inspiradores. 
+- Guided projects and additional notes  
+- Folder: [`universidad-de-la-costa/`](./universidad-de-la-costa/)  
+
+## Repository Goals  
+
+- Strengthen my knowledge of **Flutter** through practice  
+
+- Build a solid foundation for future mobile development projects  
+- Document my step-by-step learning progress  
  
-- Código adaptado para mi aprendizaje personal.  
-- Carpeta: [`examples/`](./examples/)
-
-### 🎓 Aprendizaje en la universidad  
-- Ejercicios académicos y prácticas relacionadas con las clases.  
-
-- Proyectos guiados y notas adicionales.  
-- Carpeta: [`universidad-de-la-costa/`](./universidad-de-la-costa/)  
-
-## 🎯 Objetivos del repositorio  
-
-- Consolidar mi conocimiento de **Flutter** a partir de la práctica.
-  
-- Crear una base sólida para futuros proyectos de desarrollo móvil.  
-- Documentar mi progreso en el aprendizaje paso a paso.  
-
-> Este repositorio está licenciado bajo los términos de la [Licencia Apache 2.0](LICENSE).
-
-> Made with '\u{2665}' (♥) by Jesús Domínguez [@bluefeatherdev](https://github.com/bluefeatherdev/)
+> Made with '\u{2665}' (♥) by Jesús Domínguez [@bluefeatherdev](https://github.com/bluefeatherdev)
