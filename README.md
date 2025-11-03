@@ -15,10 +15,10 @@ This repository is my personal study space to learn and practice **Flutter** ste
 
 ### Structured Learning  
 
-- Basic widgets and layouts (`Text`, `Image`, `Row`, `Column`, `Container`)  
+- Basic widgets and layouts (e.g. `Text`, `Image`, `Row`, `Column`, `Container`)  
 
-- State management and navigation (`Stateless`, `Stateful`, `route`)  
-- Styles, themes, and resources (`Material Design`, `theme`, `assets`)  
+- State management and navigation (e.g. `Stateless`, `Stateful`, `route`)  
+- Styles, themes, and resources (e.g. `Material Design`, `theme`, `assets`)  
 - Folder: [`learn-flutter/`](./learn-flutter/)  
 
 ### Personal Experiments  
@@ -26,6 +26,7 @@ This repository is my personal study space to learn and practice **Flutter** ste
 - My free explorations with Flutter  
 
 - Experiments, prototypes, and small personal projects  
+- Inspiring code adapted for my personal learning
 - Folder: [`playground/`](./playground/)  
 
 ### Official Codelabs  
@@ -37,9 +38,7 @@ This repository is my personal study space to learn and practice **Flutter** ste
 
 ### Featured Examples  
 
-- Community examples I found useful or inspiring 
- 
-- Adapted code for my personal learning  
+
 - Folder: [`examples/`](./examples/)  
 
 ### University Learning  
