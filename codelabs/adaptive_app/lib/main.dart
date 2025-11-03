@@ -10,8 +10,6 @@ import 'src/adaptive_playlists.dart';
 import 'src/app_state.dart';
 import 'src/playlist_details.dart';
 
-// TODO: Make a pretty README.md
-
 // https://developers.google.com/youtube/v3/guides/auth/installed-apps#identify-access-scopes
 final scopes = ['https://www.googleapis.com/auth/youtube.readonly'];
 
