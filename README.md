@@ -36,11 +36,6 @@ This repository is my personal study space to learn and practice **Flutter** ste
 - Adapted and annotated guides  
 - Folder: [`codelabs/`](./codelabs/)  
 
-### Featured Examples  
-
-
-- Folder: [`examples/`](./examples/)  
-
 ### University Learning  
 
 - Academic exercises and class-related practices  
