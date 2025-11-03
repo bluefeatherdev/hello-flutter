@@ -1,0 +1,19 @@
+name: positioned_example_01
+description: "A Flutter demo app showcasing the Positioned widget inside a Stack with AnimatedContainer to create concentric, animated squares that change colors on tap."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
