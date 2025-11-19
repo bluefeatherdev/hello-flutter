@@ -1,27 +1,33 @@
 // Learn Flutter - Firebase - Minimal Social Media App:
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:minimal_social_media_app/components/my_button.dart';
 import 'package:minimal_social_media_app/components/my_textfield.dart';
 import 'package:minimal_social_media_app/helpers/helper_functions.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key, required this.onTap});
+class RegisterPage extends StatefulWidget {
+  const RegisterPage({super.key, required this.onTap});
 
   final void Function()? onTap;
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   // Text controllers
+  final TextEditingController usernameController = TextEditingController();
+
   final TextEditingController emailController = TextEditingController();
 
   final TextEditingController passwordController = TextEditingController();
 
+  final TextEditingController confirmPasswordController =
+      TextEditingController();
+
   // login method
-  Future<void> login() async {
+  Future<void> registerUser() async {
     // save local context before async gap
     final localContext = context;
 
@@ -31,23 +37,49 @@ class _LoginPageState extends State<LoginPage> {
       builder: (context) => const Center(child: CircularProgressIndicator()),
     );
 
-    // try sign in
-    try {
-      await FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: emailController.text.trim(),
-        password: passwordController.text.trim(),
-      );
-
-      // if widget is still mounted, pop loading circle
-      if (!mounted) return;
-    }
-    // display any errors
-    on FirebaseAuthException catch (e) {
-      if (!mounted) return;
-
+    // make sure passwords match
+    if (passwordController.text != confirmPasswordController.text) {
       // pop loading circle
       Navigator.pop(context);
-      displayMessageToUser(e.code, context);
+
+      // show error message to user
+      displayMessageToUser("Passwords don't match!", context);
+    }
+    // if passwords do match
+    else {
+      // try creating the use
+      try {
+        // create the user
+        UserCredential? userCredential = await FirebaseAuth.instance
+            .createUserWithEmailAndPassword(
+              email: emailController.text,
+              password: passwordController.text,
+            );
+
+        // create a user document and add to firestore
+        createUserDocument(userCredential);
+
+        // if widget is still mounted, pop loading circle
+        if (!mounted) return;
+      } on FirebaseAuthException catch (e) {
+        // pip loading circle
+        Navigator.pop(context);
+
+        // display error message to user
+        displayMessageToUser(e.code, context);
+      }
+    }
+  }
+
+  Future<void> createUserDocument(UserCredential? userCredential) async {
+    if (userCredential != null && userCredential.user != null) {
+      await FirebaseFirestore.instance
+          .collection('Users')
+          .doc(userCredential.user!.email)
+          .set({
+            'email': userCredential.user!.email,
+            'username': usernameController.text,
+          });
     }
   }
 
@@ -75,6 +107,15 @@ class _LoginPageState extends State<LoginPage> {
 
               const SizedBox(height: 25),
 
+              // username textfield
+              MyTextField(
+                hintText: 'Username',
+                obscureText: false,
+                controller: usernameController,
+              ),
+
+              const SizedBox(height: 10),
+
               // email textfield
               MyTextField(
                 hintText: 'Email',
@@ -89,6 +130,15 @@ class _LoginPageState extends State<LoginPage> {
                 hintText: 'Password',
                 obscureText: true,
                 controller: passwordController,
+              ),
+
+              const SizedBox(height: 10),
+
+              // Confirm password textfield
+              MyTextField(
+                hintText: 'Confirm Password',
+                obscureText: true,
+                controller: confirmPasswordController,
               ),
 
               const SizedBox(height: 10),
@@ -108,8 +158,8 @@ class _LoginPageState extends State<LoginPage> {
 
               const SizedBox(height: 25),
 
-              // sign in button
-              MyButton(text: 'Login', onTap: login),
+              // register user button
+              MyButton(text: 'Register', onTap: registerUser),
 
               const SizedBox(height: 25),
 
@@ -117,11 +167,11 @@ class _LoginPageState extends State<LoginPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Text("Don't have an account?"),
+                  Text("Already have an account?"),
                   GestureDetector(
                     onTap: widget.onTap,
                     child: Text(
-                      ' Register Here',
+                      ' Login Here',
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
                   ),
