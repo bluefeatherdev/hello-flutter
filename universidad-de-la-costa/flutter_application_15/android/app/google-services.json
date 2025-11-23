@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "625352932904",
+    "project_id": "cuc-firebase-example",
+    "storage_bucket": "cuc-firebase-example.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:625352932904:android:13810c4a831430f82cbf1d",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_15"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSI01BZ9D4-pr2xnLOUUOU78ap8ghMeiM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
