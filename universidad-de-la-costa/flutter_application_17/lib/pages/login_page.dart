@@ -1,5 +1,6 @@
 // Universidad de la Costa - Computación Móvil - Flutter Application 17:
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -12,9 +13,54 @@ class _LoginPageState extends State<LoginPage> {
   // Text field controllers
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  bool isLoading = false;
 
   // Login method
-  Future<void> login() async {}
+  Future<void> login() async {
+    if (emailController.text.trim().isEmpty ||
+        passwordController.text.trim().isEmpty) {
+      showErrorDialog('Por favor completa todos los campos');
+      return;
+    }
+
+    setState(() => isLoading = true);
+
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: emailController.text.trim(),
+        password: passwordController.text.trim(),
+      );
+      if (mounted) {
+        Navigator.pushReplacementNamed(context, '/');
+      }
+    } on FirebaseAuthException catch (e) {
+      String message = 'Error al iniciar sesión';
+      if (e.code == 'user-not-found') {
+        message = 'No existe una cuenta con este correo';
+      } else if (e.code == 'wrong-password') {
+        message = 'Contraseña incorrecta';
+      }
+      showErrorDialog(message);
+    } finally {
+      if (mounted) setState(() => isLoading = false);
+    }
+  }
+
+  void showErrorDialog(String message) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Error'),
+        content: Text(message),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('OK'),
+          ),
+        ],
+      ),
+    );
+  }
 
   // Build UI
   @override

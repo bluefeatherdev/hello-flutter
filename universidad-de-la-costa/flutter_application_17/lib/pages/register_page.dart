@@ -1,5 +1,7 @@
 // Universidad de la Costa - Computación Móvil - Flutter Application 17:
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_17/database/firestore_database.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -13,10 +15,79 @@ class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController firstNameController = TextEditingController();
   final TextEditingController lastNameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
+  final TextEditingController phoneController = TextEditingController();
+  final TextEditingController zoneController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  final TextEditingController confirmPasswordController = TextEditingController();
+
+
+    List<String> selectedDays = [];
+  final List<String> daysOfWeek = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
+  bool isLoading = false;
 
   // Sign-Up method
-  Future<void> signUp() async {}
+  Future<void> signUp() async {
+    if (firstNameController.text.trim().isEmpty ||
+        lastNameController.text.trim().isEmpty ||
+        emailController.text.trim().isEmpty ||
+        phoneController.text.trim().isEmpty ||
+        zoneController.text.trim().isEmpty ||
+        passwordController.text.trim().isEmpty) {
+      showErrorDialog('Por favor completa todos los campos');
+      return;
+    }
+
+    if (passwordController.text.trim() != confirmPasswordController.text.trim()) {
+      showErrorDialog('Las contraseñas no coinciden');
+      return;
+    }
+
+    if (selectedDays.isEmpty) {
+      showErrorDialog('Selecciona al menos un día de disponibilidad');
+      return;
+    }
+
+    setState(() => isLoading = true);
+
+    try {
+      UserCredential userCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: emailController.text.trim(),
+        password: passwordController.text.trim(),
+      );
+
+      FirestoreDatabase database = FirestoreDatabase();
+      await database.createUserDocument(
+        uid: userCredential.user!.uid,
+        firstName: firstNameController.text.trim(),
+        lastName: lastNameController.text.trim(),
+        email: emailController.text.trim(),
+        phone: phoneController.text.trim(),
+        zone: zoneController.text.trim(),
+        availableDays: selectedDays,
+      );
+
+      if (mounted) Navigator.pushReplacementNamed(context, '/');
+    } on FirebaseAuthException catch (e) {
+      String message = 'Error al crear cuenta';
+      if (e.code == 'email-already-in-use') {
+        message = 'Ya existe una cuenta con este correo';
+      }
+      showErrorDialog(message);
+    } finally {
+      if (mounted) setState(() => isLoading = false);
+    }
+  }
+
+  void showErrorDialog(String message) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Error'),
+        content: Text(message),
+        actions: [TextButton(onPressed: () => Navigator.pop(context), child: const Text('OK'))],
+      ),
+    );
+  }
 
   // Build UI
   @override
