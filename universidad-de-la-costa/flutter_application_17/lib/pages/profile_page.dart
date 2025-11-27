@@ -107,7 +107,12 @@ class _ProfilePageState extends State<ProfilePage> {
                                 ' Esse ullamco dolore consectetur et amet fugiat consectetur anim non aliquip.',
                               ),
                               ElevatedButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.pushNamed(
+                                    context,
+                                    '/assign-managers-page',
+                                  );
+                                },
                                 child: const Text('Click here'),
                               ),
                             ],
@@ -139,7 +144,12 @@ class _ProfilePageState extends State<ProfilePage> {
                                 ' Esse ullamco dolore consectetur et amet fugiat consectetur anim non aliquip.',
                               ),
                               ElevatedButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.pushNamed(
+                                    context,
+                                    '/add-tasks-page',
+                                  );
+                                },
                                 child: const Text('Click here'),
                               ),
                             ],

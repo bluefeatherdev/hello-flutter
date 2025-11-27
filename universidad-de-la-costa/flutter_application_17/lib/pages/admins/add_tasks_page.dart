@@ -2,22 +2,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_17/components/my_back_button.dart';
 
-class ParcelasPage extends StatefulWidget {
-  const ParcelasPage({super.key});
+class AddTasksPage extends StatefulWidget {
+  const AddTasksPage({super.key});
 
   @override
-  State<ParcelasPage> createState() => _ParcelasPageState();
+  State<AddTasksPage> createState() => _AddTasksPageState();
 }
 
-class _ParcelasPageState extends State<ParcelasPage> {
+class _AddTasksPageState extends State<AddTasksPage> {
   // form ket
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   // Text field controllers
+  final TextEditingController taskNameController = TextEditingController();
+  final TextEditingController taskTypeController = TextEditingController();
+  final TextEditingController taskDateController = TextEditingController();
   final TextEditingController parcelaNameController = TextEditingController();
-  final TextEditingController parcelaSizeController = TextEditingController();
-  final TextEditingController parcelaTypeController = TextEditingController();
-  final TextEditingController parcelaStatusController = TextEditingController();
 
   // Build UI
   @override
@@ -40,7 +40,7 @@ class _ParcelasPageState extends State<ParcelasPage> {
                   children: <Widget>[
                     // 0. Title
                     Text(
-                      'Organizar parcelas o zonas de cultivos',
+                      'Planificar tareas semanales o mensuales',
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
@@ -51,9 +51,57 @@ class _ParcelasPageState extends State<ParcelasPage> {
 
                     // 1. Nombre
                     TextFormField(
+                      controller: taskNameController,
+                      decoration: const InputDecoration(
+                        hintText: 'Enter task name',
+                      ),
+                      validator: (String? value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter some text';
+                        }
+                        return null;
+                      },
+                    ),
+
+                    const SizedBox(height: 10),
+
+                    // 2. Type
+                    TextFormField(
+                      controller: taskTypeController,
+                      decoration: const InputDecoration(
+                        hintText: 'Select task type',
+                      ),
+                      validator: (String? value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter some text';
+                        }
+                        return null;
+                      },
+                    ),
+
+                    const SizedBox(height: 10),
+
+                    // 3. Fecha responsable
+                    TextFormField(
+                      controller: taskDateController,
+                      decoration: const InputDecoration(
+                        hintText: 'Enter task date',
+                      ),
+                      validator: (String? value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter some text';
+                        }
+                        return null;
+                      },
+                    ),
+
+                    const SizedBox(height: 10),
+
+                    // 4. Select parcela (get parcela list with Firebase...)
+                    TextFormField(
                       controller: parcelaNameController,
                       decoration: const InputDecoration(
-                        hintText: 'Enter parcela name',
+                        hintText: 'Select parcela',
                       ),
                       validator: (String? value) {
                         if (value == null || value.isEmpty) {
@@ -62,56 +110,6 @@ class _ParcelasPageState extends State<ParcelasPage> {
                         return null;
                       },
                     ),
-
-                    const SizedBox(height: 10),
-
-                    // 2. Tamaño
-                    TextFormField(
-                      controller: parcelaSizeController,
-                      decoration: const InputDecoration(
-                        hintText: 'Enter parcela size',
-                      ),
-                      validator: (String? value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter some text';
-                        }
-                        return null;
-                      },
-                    ),
-
-                    const SizedBox(height: 10),
-
-                    // 3. Tipo de cultivo
-                    TextFormField(
-                      controller: parcelaTypeController,
-                      decoration: const InputDecoration(
-                        hintText: 'Enter parcela type',
-                      ),
-                      validator: (String? value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter some text';
-                        }
-                        return null;
-                      },
-                    ),
-
-                    const SizedBox(height: 10),
-
-                    // 4. Estado actual
-                    TextFormField(
-                      controller: parcelaStatusController,
-                      decoration: const InputDecoration(
-                        hintText: 'Enter parcela status',
-                      ),
-                      validator: (String? value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter some text';
-                        }
-                        return null;
-                      },
-                    ),
-
-                    const SizedBox(height: 10),
 
                     // Submit button
                     Padding(

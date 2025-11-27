@@ -7,7 +7,7 @@ class FirestoreDatabase {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   // ==================== USUARIOS ====================
-  
+
   Future<void> createUserDocument({
     required String uid,
     required String firstName,
@@ -38,13 +38,15 @@ class FirestoreDatabase {
     String? uid = _auth.currentUser?.uid;
     if (uid == null) return Stream.value(null);
 
-    return _firestore.collection('users').doc(uid).snapshots().map(
-          (doc) => doc.data(),
-        );
+    return _firestore
+        .collection('users')
+        .doc(uid)
+        .snapshots()
+        .map((doc) => doc.data());
   }
 
   // ==================== PARCELAS ====================
-  
+
   Future<void> createParcela({
     required String name,
     required String size,
@@ -71,9 +73,11 @@ class FirestoreDatabase {
         .collection('parcelas')
         .orderBy('createdAt', descending: true)
         .snapshots()
-        .map((snapshot) => snapshot.docs
-            .map((doc) => {'id': doc.id, ...doc.data()})
-            .toList());
+        .map(
+          (snapshot) => snapshot.docs
+              .map((doc) => {'id': doc.id, ...doc.data()})
+              .toList(),
+        );
   }
 
   Future<void> deleteParcela(String parcelaId) async {
@@ -85,7 +89,7 @@ class FirestoreDatabase {
   }
 
   // ==================== TAREAS ====================
-  
+
   Future<void> createTask({
     required String title,
     required String description,
@@ -116,13 +120,15 @@ class FirestoreDatabase {
         .where('assignedTo', isEqualTo: userId)
         .orderBy('date')
         .snapshots()
-        .map((snapshot) => snapshot.docs
-            .map((doc) => {'id': doc.id, ...doc.data()})
-            .toList());
+        .map(
+          (snapshot) => snapshot.docs
+              .map((doc) => {'id': doc.id, ...doc.data()})
+              .toList(),
+        );
   }
 
   // ==================== PARTICIPACIÓN ====================
-  
+
   Future<void> registerParticipation({
     required String taskId,
     required double hoursWorked,
@@ -132,7 +138,7 @@ class FirestoreDatabase {
       String? uid = _auth.currentUser?.uid;
       if (uid == null) throw Exception('Usuario no autenticado');
 
-      await _firestore.collection('participations').add({
+      await _firestore.collection('participation').add({
         'userId': uid,
         'taskId': taskId,
         'hoursWorked': hoursWorked,
@@ -144,7 +150,8 @@ class FirestoreDatabase {
       DocumentReference userRef = _firestore.collection('users').doc(uid);
       await _firestore.runTransaction((transaction) async {
         DocumentSnapshot userDoc = await transaction.get(userRef);
-        double currentHours = (userDoc.data() as Map<String, dynamic>)['totalHours'] ?? 0.0;
+        double currentHours =
+            (userDoc.data() as Map<String, dynamic>)['totalHours'] ?? 0.0;
         transaction.update(userRef, {'totalHours': currentHours + hoursWorked});
       });
     } catch (e) {

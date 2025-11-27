@@ -2,22 +2,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_17/components/my_back_button.dart';
 
-class ParcelasPage extends StatefulWidget {
-  const ParcelasPage({super.key});
+class AssignManagersPage extends StatefulWidget {
+  const AssignManagersPage({super.key});
 
   @override
-  State<ParcelasPage> createState() => _ParcelasPageState();
+  State<AssignManagersPage> createState() => _AssignManagersPageState();
 }
 
-class _ParcelasPageState extends State<ParcelasPage> {
+class _AssignManagersPageState extends State<AssignManagersPage> {
   // form ket
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   // Text field controllers
+  final TextEditingController managerNameController = TextEditingController();
   final TextEditingController parcelaNameController = TextEditingController();
-  final TextEditingController parcelaSizeController = TextEditingController();
-  final TextEditingController parcelaTypeController = TextEditingController();
-  final TextEditingController parcelaStatusController = TextEditingController();
 
   // Build UI
   @override
@@ -40,7 +38,7 @@ class _ParcelasPageState extends State<ParcelasPage> {
                   children: <Widget>[
                     // 0. Title
                     Text(
-                      'Organizar parcelas o zonas de cultivos',
+                      'Asignar responsables',
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
@@ -49,11 +47,27 @@ class _ParcelasPageState extends State<ParcelasPage> {
 
                     const SizedBox(height: 10),
 
-                    // 1. Nombre
+                    // 1. Nombre responsable
+                    TextFormField(
+                      controller: managerNameController,
+                      decoration: const InputDecoration(
+                        hintText: 'Enter manager name',
+                      ),
+                      validator: (String? value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter some text';
+                        }
+                        return null;
+                      },
+                    ),
+
+                    const SizedBox(height: 10),
+
+                    // 2. Select parcela
                     TextFormField(
                       controller: parcelaNameController,
                       decoration: const InputDecoration(
-                        hintText: 'Enter parcela name',
+                        hintText: 'Select parcela',
                       ),
                       validator: (String? value) {
                         if (value == null || value.isEmpty) {
@@ -65,51 +79,13 @@ class _ParcelasPageState extends State<ParcelasPage> {
 
                     const SizedBox(height: 10),
 
-                    // 2. Tamaño
-                    TextFormField(
-                      controller: parcelaSizeController,
-                      decoration: const InputDecoration(
-                        hintText: 'Enter parcela size',
-                      ),
-                      validator: (String? value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter some text';
-                        }
-                        return null;
-                      },
-                    ),
+                    // 3. Estado del huerto
+                    Text('Parcela status: get parcela STATUS with Firebase...'),
 
                     const SizedBox(height: 10),
 
-                    // 3. Tipo de cultivo
-                    TextFormField(
-                      controller: parcelaTypeController,
-                      decoration: const InputDecoration(
-                        hintText: 'Enter parcela type',
-                      ),
-                      validator: (String? value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter some text';
-                        }
-                        return null;
-                      },
-                    ),
-
-                    const SizedBox(height: 10),
-
-                    // 4. Estado actual
-                    TextFormField(
-                      controller: parcelaStatusController,
-                      decoration: const InputDecoration(
-                        hintText: 'Enter parcela status',
-                      ),
-                      validator: (String? value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter some text';
-                        }
-                        return null;
-                      },
-                    ),
+                    // 4. Tipo de cultivo
+                    Text('Parcela type: get parcela TYPE with Firebase...'),
 
                     const SizedBox(height: 10),
 
@@ -122,7 +98,7 @@ class _ParcelasPageState extends State<ParcelasPage> {
                             // Process form data with Firebase...
                           }
                         },
-                        child: const Text('Submit'),
+                        child: const Text('Asignar'),
                       ),
                     ),
                   ],

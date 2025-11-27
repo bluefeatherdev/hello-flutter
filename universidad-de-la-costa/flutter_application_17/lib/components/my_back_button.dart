@@ -9,7 +9,7 @@ class MyBackButton extends StatelessWidget {
     return GestureDetector(
       onTap: () => Navigator.pop(context),
       child: Container(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.symmetric(vertical: 27.0),
         decoration: BoxDecoration(shape: BoxShape.circle),
         child: Icon(Icons.arrow_back),
       ),

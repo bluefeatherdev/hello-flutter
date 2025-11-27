@@ -18,11 +18,19 @@ class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController phoneController = TextEditingController();
   final TextEditingController zoneController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  final TextEditingController confirmPasswordController = TextEditingController();
+  final TextEditingController confirmPasswordController =
+      TextEditingController();
 
-
-    List<String> selectedDays = [];
-  final List<String> daysOfWeek = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
+  List<String> selectedDays = [];
+  final List<String> daysOfWeek = [
+    'Lunes',
+    'Martes',
+    'Miércoles',
+    'Jueves',
+    'Viernes',
+    'Sábado',
+    'Domingo',
+  ];
   bool isLoading = false;
 
   // Sign-Up method
@@ -32,12 +40,14 @@ class _RegisterPageState extends State<RegisterPage> {
         emailController.text.trim().isEmpty ||
         phoneController.text.trim().isEmpty ||
         zoneController.text.trim().isEmpty ||
-        passwordController.text.trim().isEmpty) {
+        passwordController.text.trim().isEmpty ||
+        confirmPasswordController.text.trim().isEmpty) {
       showErrorDialog('Por favor completa todos los campos');
       return;
     }
 
-    if (passwordController.text.trim() != confirmPasswordController.text.trim()) {
+    if (passwordController.text.trim() !=
+        confirmPasswordController.text.trim()) {
       showErrorDialog('Las contraseñas no coinciden');
       return;
     }
@@ -50,10 +60,11 @@ class _RegisterPageState extends State<RegisterPage> {
     setState(() => isLoading = true);
 
     try {
-      UserCredential userCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
-        email: emailController.text.trim(),
-        password: passwordController.text.trim(),
-      );
+      UserCredential userCredential = await FirebaseAuth.instance
+          .createUserWithEmailAndPassword(
+            email: emailController.text.trim(),
+            password: passwordController.text.trim(),
+          );
 
       FirestoreDatabase database = FirestoreDatabase();
       await database.createUserDocument(
@@ -84,7 +95,12 @@ class _RegisterPageState extends State<RegisterPage> {
       builder: (context) => AlertDialog(
         title: const Text('Error'),
         content: Text(message),
-        actions: [TextButton(onPressed: () => Navigator.pop(context), child: const Text('OK'))],
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('OK'),
+          ),
+        ],
       ),
     );
   }
@@ -123,7 +139,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
               const SizedBox(height: 10),
 
-              // First name textfield
+              // Last name textfield
               TextField(
                 controller: lastNameController,
                 decoration: InputDecoration(
@@ -151,6 +167,34 @@ class _RegisterPageState extends State<RegisterPage> {
 
               const SizedBox(height: 10),
 
+              // Phone textfield
+              TextField(
+                controller: phoneController,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  hintText: 'Type your phone...',
+                ),
+                obscureText: false,
+              ),
+
+              const SizedBox(height: 10),
+
+              // Zone textfield
+              TextField(
+                controller: zoneController,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  hintText: 'Type your zone...',
+                ),
+                obscureText: false,
+              ),
+
+              const SizedBox(height: 10),
+
               // Password textfield
               TextField(
                 controller: passwordController,
@@ -167,7 +211,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
               // Repeat password textfield
               TextField(
-                controller: passwordController,
+                controller: confirmPasswordController,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),

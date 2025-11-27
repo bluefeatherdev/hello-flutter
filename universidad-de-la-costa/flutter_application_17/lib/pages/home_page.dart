@@ -36,6 +36,16 @@ class HomePage extends StatelessWidget {
               },
               child: Text('Create an account'),
             ),
+
+            const SizedBox(height: 25),
+
+            // Create an account link
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, '/profile-page');
+              },
+              child: Text('Test profile pages'),
+            ),
           ],
         ),
       ),
