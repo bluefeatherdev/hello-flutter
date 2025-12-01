@@ -1,0 +1,12 @@
+name: mvvm_model_dart_example
+
+description: >-
+  MVVM architecture example in Dart demonstrating HTTP requests, async/await 
+  patterns, JSON handling, and state management using JSONPlaceholder test API. 
+  Implements Model layer with GET/PUT operations and error handling for 
+  learning Flutter state management fundamentals.
+
+environment:
+  sdk: '^3.9.0'
+dependencies:
+  http: ^1.6.0
