@@ -1,5 +1,8 @@
-# From Visual Studio Code
+# Visual Studio Code
 .vscode
+
+# Pub
+**/.dart_tool/
 
 # Networking
 *.pdf
