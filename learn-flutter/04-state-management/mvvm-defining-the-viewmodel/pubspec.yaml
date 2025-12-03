@@ -1,0 +1,16 @@
+name: mvvm_viewmodel_dart_example
+
+description: >-
+  MVVM pattern demonstration implementing a reactive ViewModel with HTTP 
+  communication. Features CounterData DTO, CounterModel repository for API 
+  interaction, and CounterViewModel with ChangeNotifier for state management. 
+  Includes terminal-based testing without UI dependencies using JSONPlaceholder 
+  API for data persistence simulation.
+
+environment:
+  sdk: '^3.9.0'
+
+dependencies:
+  http: ^1.6.0
+  flutter:
+    sdk: flutter
