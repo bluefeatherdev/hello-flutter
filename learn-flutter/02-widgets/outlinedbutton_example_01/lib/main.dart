@@ -1,4 +1,4 @@
-// Learn Flutter - Handling User Input - OutlinedButton Example
+// Learn Flutter - Widgets - OutlinedButton Example 01
 import 'package:flutter/material.dart';
 
 void main() => runApp(const OutlinedButtonApp());
