@@ -1,0 +1,21 @@
+name: textbutton_example_01
+description: >-
+  Comprehensive TextButton customization example demonstrating state-dependent 
+  styling, gradient backgrounds, custom foreground builders, image backgrounds, 
+  and adaptive theming with dark mode and RTL support.
+version: 0.1.0
+
+environment:
+  sdk: ^3.10.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
