@@ -16,9 +16,9 @@ It shows how to validate input using a GlobalKey<FormState> and provide feedback
   - AppBar → displays the title Form Sample  
 
 
-  - Body → centered FromExample widget  
+  - Body → centered FormExample widget  
 
-- FromExample  
+- FormExample  
 
   A StatefulWidget that manages form validation.  
 

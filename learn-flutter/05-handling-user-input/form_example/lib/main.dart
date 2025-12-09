@@ -13,20 +13,20 @@ class FormApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(title: const Text('Form Sample')),
-        body: Center(child: FromExample()),
+        body: Center(child: FormExample()),
       ),
     );
   }
 }
 
-class FromExample extends StatefulWidget {
-  const FromExample({super.key});
+class FormExample extends StatefulWidget {
+  const FormExample({super.key});
 
   @override
-  State<FromExample> createState() => _FromExampleState();
+  State<FormExample> createState() => _FormExampleState();
 }
 
-class _FromExampleState extends State<FromExample> {
+class _FormExampleState extends State<FormExample> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
